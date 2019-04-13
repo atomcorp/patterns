@@ -9,7 +9,11 @@ const Home = () => (
     <ul>
       {Object.keys(routes).map((key) => {
         const route = routes[key];
-        return <Link to={route.path}>{route.name}</Link>;
+        return (
+          <li key={route.path}>
+            <Link to={route.path}>{route.name}</Link>
+          </li>
+        );
       })}
     </ul>
   </section>

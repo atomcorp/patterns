@@ -6,8 +6,8 @@ type BoardType = {
 
 const Board = (props: BoardType) => (
   <section>
-    {props.matrix.map((columns) => (
-      <div>{columns.map((cell) => cell)}</div>
+    {props.matrix.map((columns, i) => (
+      <div key={i}>{columns.map((cell) => cell)}</div>
     ))}
   </section>
 );

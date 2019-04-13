@@ -5,6 +5,10 @@ const routes: routesType = {
     path: '/basic',
     name: 'Basic',
   },
+  repeated: {
+    path: '/repeated',
+    name: 'Repeated',
+  },
 };
 
 export default routes;
