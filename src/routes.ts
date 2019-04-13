@@ -9,6 +9,10 @@ const routes: routesType = {
     path: '/repeated',
     name: 'Repeated',
   },
+  randomTiles: {
+    path: 'random-tiles',
+    name: 'Random tiles',
+  },
 };
 
 export default routes;
