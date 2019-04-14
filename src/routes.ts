@@ -13,6 +13,10 @@ const routes: routesType = {
     path: 'random-tiles',
     name: 'Random tiles',
   },
+  elements: {
+    path: '/elements',
+    name : 'Elements'
+  }
 };
 
 export default routes;
