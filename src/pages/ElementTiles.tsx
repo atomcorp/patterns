@@ -12,10 +12,11 @@ const BlueTile = <Tile color="blue" />;
 
 const tileOptions = [RedTile, BlueTile];
 const animals = [
-  [<div>🐶</div>, <div>🐶</div>],
+  [<div>🐶</div>, <div>🐶</div>, <div>🐶</div>, <div>🐶</div>],
   [<div>🦊</div>, <div>🦊</div>],
-  [<div>🐷</div>, <div>🐷</div>],
+  [<div>🐷</div>, <div>🐷</div>, <div>🐷</div>],
 ];
+
 const randomTile = () => tileOptions[Math.floor(Math.random() * 2)];
 const randomAnimals = () => animals[Math.floor(Math.random() * animals.length)];
 const gridWithPattern = (
@@ -44,25 +45,30 @@ const shouldRefreshMatrix = (grid: LengthType, matrix: LengthType) => {
   if (grid.col === 0) {
     return true;
   }
+  console.log(grid.col, matrix.col, grid.row, matrix.row);
   // end of pattern
   if (
     Number.isInteger(grid.col / matrix.col) &&
     Number.isInteger(grid.row / matrix.row)
   ) {
+    console.log(grid.col / matrix.col, grid.row / matrix.row);
     return true;
   }
   return false;
 };
 
 const initPattern = () => {
-  const matrixLength = {
-    row: 1,
-    col: 2,
-  };
   let matrix = [randomAnimals()];
+  const matrixLength = {
+    row: matrix.length,
+    col: matrix[0].length,
+  };
   return (grid: {row: number; col: number}) => {
     if (shouldRefreshMatrix(grid, matrixLength)) {
       matrix = [randomAnimals()];
+      matrixLength.row = matrix.length;
+      matrixLength.col = matrix[0].length;
+      console.log(matrixLength);
     }
     return matrix;
   };
@@ -71,15 +77,13 @@ const initPattern = () => {
 const getPattern = initPattern();
 
 const ElementTiles = () => {
-  const [matrix, setMatrix] = useState(gridWithPattern(8, 6, getPattern));
+  const [matrix, setMatrix] = useState(gridWithPattern(6, 2, getPattern));
   return (
     <Page title="Element titles">
       <Board matrix={matrix} />
       <button
         onClick={() => {
-          setMatrix(
-            gridWithPattern(8, 6, getPattern)
-          );
+          setMatrix(gridWithPattern(6, 2, getPattern));
         }}
       >
         Random
