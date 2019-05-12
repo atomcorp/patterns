@@ -1,10 +1,18 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
-import {Basic, Home, RepeatedPattern, RandomTiles, ElementTiles} from './pages';
+import {
+  Basic,
+  Home,
+  RepeatedPattern,
+  RandomTiles,
+  ElementTiles,
+  Defined,
+} from './pages';
 
 const Router = () => (
   <Switch>
+    <Route path="/defined" component={Defined} />
     <Route path="/elements" component={ElementTiles} />
     <Route path="/random-tiles" component={RandomTiles} />
     <Route path="/repeated" component={RepeatedPattern} />

@@ -15,8 +15,12 @@ const routes: routesType = {
   },
   elements: {
     path: '/elements',
-    name : 'Elements'
-  }
+    name: 'Elements (Broke)',
+  },
+  defined: {
+    path: '/defined',
+    name: 'Defined',
+  },
 };
 
 export default routes;

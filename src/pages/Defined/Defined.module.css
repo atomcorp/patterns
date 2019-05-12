@@ -1,0 +1,35 @@
+.cell {
+  height: 16px;
+  width: 16px;
+  position: relative;
+}
+
+.cell:after {
+  content: ' ';
+  position: absolute;
+  border-style: solid;
+}
+
+.topLeft:after {
+  border-width: 16px 16px 0 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+.topRight:after {
+  border-width: 0 16px 16px 0;
+  border-color: transparent #007bff transparent transparent;
+}
+
+.bottomRight:after {
+  border-width: 0 0 16px 16px;
+  border-color: transparent transparent #007bff transparent;
+}
+
+.bottomLeft:after {
+  border-width: 16px 0 0 16px;
+  border-color: transparent transparent transparent #007bff;
+}
+
+.blank:after {
+  border-style: none;
+}
