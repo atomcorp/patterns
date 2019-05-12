@@ -1,37 +1,5 @@
 import React from 'react';
-import {Page, Board} from '../../components';
-import css from './Defined.module.css';
-
-type CellType = {
-  color: string;
-  direction: 'topLeft' | 'topRight' | 'bottomRight' | 'bottomLeft' | 'blank';
-};
-
-const Cell = (props: CellType) => (
-  <div
-    className={`${css.cell} ${css[props.direction]}`}
-    style={{
-      background: 'white',
-    }}
-  />
-);
-
-// const triangle = {};
-
-const returnCell = (style: number) => {
-  switch (style) {
-    case 1:
-      return <Cell direction="topLeft" color="red" />;
-    case 2:
-      return <Cell direction="topRight" color="red" />;
-    case 3:
-      return <Cell direction="bottomRight" color="blue" />;
-    case 4:
-      return <Cell direction="bottomLeft" color="blue" />;
-    default:
-      return <Cell direction="blank" color="yellow" />;
-  }
-};
+import {Page, Board, returnCell} from '../components';
 
 type MatrixType = number[][];
 
@@ -52,6 +20,8 @@ const matrixBaseStyles2 = [
   [3, 4, 0, 0, 3, 4, 0, 0],
   [0, 0, 2, 1, 0, 0, 2, 1],
 ];
+
+const matrixBaseStyles3 = [[]];
 
 const returnMatrix = (matrix: MatrixType) =>
   matrix.map((row) => row.map((int) => returnCell(int)));

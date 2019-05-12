@@ -8,11 +8,13 @@ import {
   RandomTiles,
   ElementTiles,
   Defined,
+  Colours,
 } from './pages';
 
 const Router = () => (
   <Switch>
     <Route path="/defined" component={Defined} />
+    <Route path="/colours" component={Colours} />
     <Route path="/elements" component={ElementTiles} />
     <Route path="/random-tiles" component={RandomTiles} />
     <Route path="/repeated" component={RepeatedPattern} />

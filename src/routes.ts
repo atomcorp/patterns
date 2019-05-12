@@ -21,6 +21,10 @@ const routes: routesType = {
     path: '/defined',
     name: 'Defined',
   },
+  colours: {
+    path: '/colours',
+    name: 'Colours',
+  },
 };
 
 export default routes;
