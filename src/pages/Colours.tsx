@@ -19,6 +19,7 @@ const matrixBase = [
 const returnMatrix = (matrix: MatrixType) =>
   matrix.map((row) =>
     row.reduce((acc: JSX.Element[], item) => {
+      // deconstruct arrays
       if (Array.isArray(item)) {
         const items = item.map((nItem) => returnColourCell(nItem));
         return [...acc, ...items];

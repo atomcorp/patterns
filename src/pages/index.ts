@@ -5,3 +5,4 @@ export {default as RandomTiles} from './RandomTiles';
 export {default as ElementTiles} from './ElementTiles';
 export {default as Defined} from './Defined';
 export {default as Colours} from './Colours';
+export {default as Chevrons} from './Chevrons/Chevrons';
